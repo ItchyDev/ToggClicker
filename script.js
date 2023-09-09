@@ -8,7 +8,7 @@ const swagUpgrade = document.querySelector(".swagUpgrade")
 const numberOfSwagCounter = document.querySelector(".swagText")
 const swagCost = document.querySelector(".swagCost")
 
-//function for adding money
+//function for adding money per click takes parameter to allow for upgrades. 
 function addMoneyPerClick(amount){
     money = money + amount
     console.log(money)
@@ -20,6 +20,7 @@ function updateDisplay(){
     money = Math.round(money);
     //updates money counter based on money var
     display.textContent = money+" $"
+    
     //money per sec formula
     moneyPerSecond.textContent = `You currently get ${swaggleTons}$ per second`
     //counts swaggletons to display
@@ -27,9 +28,18 @@ function updateDisplay(){
     //calculate how much the next swag will cost 
     swagCost.textContent = Math.round(25 * swagPriceMulti )
 }
+
+//Swag Code..................................
+
+const swagUpdater = setInterval(swagTon, 1000)
+
 //adds money based on the number of swag's then calls update display
 function swagTon(){
     money = money + swaggleTons
+    let amountAdded = money + swaggleTons
+    if(swaggleTons>0){
+    console.log(amountAdded+" Money swag added")
+    }
     updateDisplay();
 }
 //function that adds one swag as part of functionality for the upgrade button 
@@ -38,19 +48,17 @@ function addSwag(){
     swaggleTons = swaggleTons + 1 
     money = money - (25* swagPriceMulti)
     swagPriceMulti = swagPriceMulti * 1.1
-    checkForWorkers();
+
+    updateDisplay()
+
     }else{
         alert("you dont have enough money")
     }
 }
-//checks to see if you own any swags to start the interval to add money
-function checkForWorkers(){
-    if(swaggleTons > 0){
-    setInterval(swagTon, 1000)
-    }
-    
-}
 
+swagUpgrade.addEventListener("click", function(){
+addSwag()
+})
 
 
 
@@ -59,20 +67,9 @@ click.addEventListener("click", function(){
     addMoneyPerClick(1);
 });
 
-swagUpgrade.addEventListener("click", function(){
-addSwag()
-})
 
 
 
 
-
-
-
-
-
-
-checkForWorkers();
-swagTon()
-
+updateDisplay();
 console.log(money)
