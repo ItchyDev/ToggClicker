@@ -2,7 +2,7 @@ let money = 25;
 let swaggleTons = 0;
 let swagPriceMulti = 1; 
 const click = document.querySelector(".clicker")
-const display = document.querySelector(".counter")
+const display = document.querySelector(".moneycounter")
 const moneyPerSecond = document.querySelector(".moneypersec")
 const swagUpgrade = document.querySelector(".swagUpgrade")
 const numberOfSwagCounter = document.querySelector(".swagText")
@@ -71,5 +71,7 @@ click.addEventListener("click", function(){
 
 
 
+
+const updateDisplayInterval = setInterval(updateDisplay, 500);
 updateDisplay();
 console.log(money)
