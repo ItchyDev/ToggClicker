@@ -1,0 +1,50 @@
+.centerhead img{
+    width: 25%;
+}
+.centerhead{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    margin: 10px;
+    
+}
+.centerhead h1{
+    margin: 30px;
+}
+.counter{
+    margin-left: 30px;
+}
+
+.header h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clickfordemoney{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clicker img{
+    width: 50%;
+}
+.clicker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upgrades{
+    width: 100%;
+}
+.humbleimage{
+    display: flex;
+    justify-content: start;
+}
+.humbleimage img{
+    width: 25%;
+}
+.humbletext{
+    width: 25%;
+}
+
