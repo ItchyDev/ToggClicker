@@ -75,8 +75,7 @@ function updateDisplay(){
 
 //Swag Code..................................
 
-const swagUpdater = setInterval(swagTon, 1000)
-let number1 = 1
+
 //adds money based on the number of swag's then calls update display
 function swagTon(){
     if(swaggleTons>0){
@@ -115,9 +114,12 @@ click.addEventListener("click", function(){
 
 
 
-
-
+//adds swag money every second 
+const swagUpdater = setInterval(swagTon, 1000)
+//updates display
 const updateDisplayInterval = setInterval(updateDisplay, 500);
 updateDisplay();
 console.log(money)
 load();
+swaggleTons = 0 
+money = 25
