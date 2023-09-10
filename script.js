@@ -18,10 +18,15 @@ money = localStorage.getItem('moneya');
     //logs the info     
 console.log("LOADED "+ money+" $")
 
-//loads the swaggletons from the last session 
+if(localStorage.getItem('swagtons') === null || localStorage.getItem('swagtons') === undefined){
+    swaggleTons = 0 
+}else{
+    //loads the swaggletons from the last session 
 swaggleTons = localStorage.getItem('swagtons');
     //logs the info     
 console.log("LOADED "+ swaggleTons+" swaggletons")
+}
+
 
 updateDisplay();
 }
@@ -54,12 +59,16 @@ function updateDisplay(){
     //updates money counter based on money var
     display.textContent = money+" $"
     
+
+
+    // swag updates .................. 
+
     //money per sec formula
     moneyPerSecond.textContent = `You currently get ${swaggleTons}$ per second`
     //counts swaggletons to display
     numberOfSwagCounter.textContent = `You have ${swaggleTons} swaggletons!`
     //calculate how much the next swag will cost 
-    swagCost.textContent = Math.round(25 * swagPriceMulti )
+    swagCost.textContent = "The next swaggleton will cost "+ Math.round(25 * swagPriceMulti )+ "$"
 
     
 }
@@ -82,7 +91,8 @@ function addSwag(){
     if(money >= 25* swagPriceMulti){
     swaggleTons = parseInt(swaggleTons) + 1 
     money = money - (25* swagPriceMulti)
-    swagPriceMulti = swagPriceMulti * 1.1
+    //How much the next swag will cost
+    swagPriceMulti = swagPriceMulti * 1.2
 
     updateDisplay();
 
@@ -111,3 +121,5 @@ const updateDisplayInterval = setInterval(updateDisplay, 500);
 updateDisplay();
 console.log(money)
 load();
+swaggleTons = 0 
+money = 25
