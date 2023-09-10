@@ -121,5 +121,3 @@ const updateDisplayInterval = setInterval(updateDisplay, 500);
 updateDisplay();
 console.log(money)
 load();
-swaggleTons = 0 
-money = 25
