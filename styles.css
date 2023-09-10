@@ -8,14 +8,34 @@ body{
   color: #00b2ff;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-text-stroke: white 1px;
+  color: #0bbd56;
 }
 
+.shop{
+  position: fixed; top: 0; right: 0; border: 0;
+  padding: 50px;
+  font-size: 150px;
+  color: #00b2ff;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  -webkit-text-stroke: white 1px;
+  
+}
+.shop a{
+  color: #0bbd56;
+  text-decoration: underline #00b2ff ;
+  -webkit-text-stroke: white 0.5px;
+}
+
+
 @media only screen and (max-width: 900px) {
-        .moneycounter{
+        .moneycounter, .shop{
         position: fixed; top: 0; right: 0; border: 0;
           padding: 50px;
           font-size: 45px;
-          -webkit-text-stroke: white 1px;
+          -webkit-text-stroke: white 0.5px;
+        }
+        .shop{
+          margin-top: 5px;
         }
   }
 

@@ -8,6 +8,39 @@ const swagUpgrade = document.querySelector(".swagUpgrade")
 const numberOfSwagCounter = document.querySelector(".swagText")
 const swagCost = document.querySelector(".swagCost")
 
+
+
+//save and load functions 
+
+function load(){
+    //sets the money var to the saved value
+money = localStorage.getItem('moneya');
+    //logs the info     
+console.log("LOADED "+ money+" $")
+
+//loads the swaggletons from the last session 
+swaggleTons = localStorage.getItem('swagtons');
+    //logs the info     
+console.log("LOADED "+ swaggleTons+" swaggletons")
+
+updateDisplay();
+}
+
+function save(){
+    //saves the money var into local storage under the name moneya
+    localStorage.setItem('moneya', money);
+    //logs this info
+    console.log(`The value ${localStorage.moneya}$ was saved into local memory`)
+
+    //swagtons save
+    localStorage.setItem('swagtons', swaggleTons);
+    console.log(`The value ${localStorage.swaggleTons} swagton's was saved into local memory`)
+    
+   
+}
+
+
+
 //function for adding money per click takes parameter to allow for upgrades. 
 function addMoneyPerClick(amount){
     money = money + amount
@@ -27,29 +60,31 @@ function updateDisplay(){
     numberOfSwagCounter.textContent = `You have ${swaggleTons} swaggletons!`
     //calculate how much the next swag will cost 
     swagCost.textContent = Math.round(25 * swagPriceMulti )
+
+    
 }
 
 //Swag Code..................................
 
 const swagUpdater = setInterval(swagTon, 1000)
-
+let number1 = 1
 //adds money based on the number of swag's then calls update display
 function swagTon(){
-    money = money + swaggleTons
-    let amountAdded = money + swaggleTons
     if(swaggleTons>0){
-    console.log(amountAdded+" Money swag added")
-    }
+    money = parseInt(money) + parseInt(swaggleTons);
+    console.log(swaggleTons+" Money swag added")
     updateDisplay();
+    }
+    
 }
 //function that adds one swag as part of functionality for the upgrade button 
 function addSwag(){
     if(money >= 25* swagPriceMulti){
-    swaggleTons = swaggleTons + 1 
+    swaggleTons = parseInt(swaggleTons) + 1 
     money = money - (25* swagPriceMulti)
     swagPriceMulti = swagPriceMulti * 1.1
 
-    updateDisplay()
+    updateDisplay();
 
     }else{
         alert("you dont have enough money")
@@ -75,3 +110,4 @@ click.addEventListener("click", function(){
 const updateDisplayInterval = setInterval(updateDisplay, 500);
 updateDisplay();
 console.log(money)
+load();
