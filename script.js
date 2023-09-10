@@ -173,5 +173,3 @@ const swagUpdater = setInterval(swagTon, 1000)
 const updateDisplayInterval = setInterval(updateDisplay, 500);
 updateDisplay();
 console.log(money)
-
-money = money + 10000
