@@ -48,7 +48,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid black;
     margin: 10px;
     
 }
@@ -93,13 +92,17 @@ body{
 }
 .humbleimage{
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
+  width: 100%;
+
 }
 .humbleimage img{
     width: 33%;
 }
 .humbletext{
-    width: 33%;
+  display: flex;
+  justify-content: space-between;
+    width: 100%;
     font-size: 50px;
 }
 @media only screen and (max-width: 900px) {
@@ -107,5 +110,44 @@ body{
     font-size: 20px;
     }
     
+}
+.upgradeButton{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  
+}
+.upgradeButton button{
+  color: #00b2ff;
+  background-color: #ff1803; 
+  margin: 10px;
+  width: 33%;
+}
+.strongmancost{
+  display: flex;
+  justify-content: space-between;
+}
+.wrappercost{
+  display: flex;
+  justify-content: space-between;
+}
+.clickfordemoney{
+  font-size: 72px;
+  background: -webkit-linear-gradient(#ffb608,#ff6a02,#ff1803,#00b2ff, #0bbd56,#ffed00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: white 0.5px;
+
+}
+.moneypersec{
+  font-size: 72px;
+  background: -webkit-linear-gradient(#ffb608,#ff6a02,#ff1803,#00b2ff, #0bbd56,#ffed00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: white 0.5px;
+
 }
 
