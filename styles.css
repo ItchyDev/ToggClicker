@@ -18,7 +18,8 @@ body{
   color: #00b2ff;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-text-stroke: white 1px;
-  
+  margin: 0;
+
 }
 .shop a{
   color: #0bbd56;
@@ -27,8 +28,9 @@ body{
 }
 
 
+
 @media only screen and (max-width: 900px) {
-        .moneycounter, .shop{
+        .moneycounter, .shop, .opModal{
         position: fixed; top: 0; right: 0; border: 0;
           padding: 50px;
           font-size: 45px;
@@ -151,3 +153,83 @@ body{
 
 }
 
+
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .4s;
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 16px;
+  width: 70%;
+  max-width: 700px;
+  padding: 20px 40px;
+}
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: hsla(309, 61%, 75%, 0.2);
+}
+.clModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+#opModal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+  
+}
+.opModal{
+    padding: 50px;
+    font-size: 150px;
+    color: #00b2ff;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 25px;
+    margin: 0;
+  }
+
+
+button {
+  padding: 12px;
+  background-color: #0bbd56;
+  border: 1px solid #282828;
+  border-radius: 10px;
+  cursor: pointer;
+  
+}
+button:hover {
+  margin-top: 3px;
+  transition: 0.5s;
+}
+
+button {
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+.is-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.clearprog{
+  display: flex;
+  justify-content: end;
+}

@@ -8,6 +8,60 @@
 </head>
 
 
+
+    <section id="modal" class="modal">
+      <div id="modalBg" class="modalBg"></div>
+      <div class="modalWrapper">
+        <div class="modalContents">
+          <img src="bananas-transparent-background-free-png.png" alt="" class="bana">
+          <div class="upgrades">
+
+        
+            <div class="humbleimage">
+            <img src="humbleworker.png" alt="">
+            <img src="strongman.png" alt="">
+          
+            </div>
+      
+      
+            <div class="humbletext">
+            <p>
+              Togg Swaggleton, will spend day and night clicking the main head for economic gains. 💪
+            </p>
+            <p>
+              The strongman uses his massive mega dome to lift a giant head for 5$ per second 🪨
+            </p>
+            
+            </div>
+      
+      
+            <div class="upgradeButton">
+              <div class="swag">
+                <button class="swagUpgrade">Upgrade</button>
+              <p class="swagText">you currently have 0 Swaggletons</p>
+              </div>
+      
+              <div class="strongman">
+                <button class="strongUpgrade">Upgrade</button>
+              <p class="strongText">you currently have 0 strongmen</p>
+              </div>
+              
+            </div>
+      
+            <div class="wrappercost">
+            <p class="swagCost">The next Swag will cost...$</p>
+            <p class="strongCost">The next strongman will cost...$</p>
+            </div>
+          </div>
+          
+        </div>
+        <div id="clModal" class="clModal">
+          ×
+        </div>
+      </div>
+    </section>  
+
+
   <div class="wrapper">
     <div class="moneycounter">
       <p> 1$
@@ -17,6 +71,7 @@
       <a href="#" onclick="save()">
       <p>Save </p>
       </a>
+      <button id="opModal">Upgrades</button>
     </div>
 
     <div class="header">
@@ -32,48 +87,14 @@
           <img src="main.png" alt="click for de $$$" >
     </div>
     
-      <div class="upgrades">
-
-        
-      <div class="humbleimage">
-      <img src="humbleworker.png" alt="">
-      <img src="strongman.png" alt="">
-    
-      </div>
-
-
-      <div class="humbletext">
-      <p>
-        Togg Swaggleton, will spend day and night clicking the main head for economic gains. 💪
-      </p>
-      <p>
-        The strongman uses his massive mega dome to lift a giant head for 5$ per second 🪨
-      </p>
       
-      </div>
-
-
-      <div class="upgradeButton">
-        <div class="swag">
-          <button class="swagUpgrade">Upgrade</button>
-        <p class="swagText">you currently have 0 Swaggletons</p>
-        </div>
-
-        <div class="strongman">
-          <button class="strongUpgrade">Upgrade</button>
-        <p class="strongText">you currently have 0 strongmen</p>
-        </div>
-        
-      </div>
-
-      <div class="wrappercost">
-      <p class="swagCost">The next Swag will cost...$</p>
-      <p class="strongCost">The next strongman will cost...$</p>
-      </div>
-    </div>
+    
+<div class="clearprog">
+      <button onclick="clearProgress()" class="clearProgress">Clear Progress</button>
+</div>
     
 
-    <button>Clear Progress</button>
+
     </div>
     
 
