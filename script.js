@@ -174,3 +174,35 @@ const updateDisplayInterval = setInterval(updateDisplay, 500);
 updateDisplay();
 console.log(money)
 
+const modal = document.getElementById('modal');
+const opModal = document.getElementById('opModal');
+const clModal = document.getElementById('clModal');
+const modalBg = document.getElementById('modalBg');
+const toggle = [opModal,clModal,modalBg];
+
+for (let i = 0; i<toggle.length ; i++){
+  toggle[i].addEventListener('click',function(){
+    modal.classList.toggle('is-show');
+  },false);
+}
+
+//clear progress
+function clearProgress(){
+    money = 0 
+    swaggleTons = 0
+    strong = 0
+
+    //saves the money var into local storage under the name moneya
+    localStorage.setItem('moneya', money);
+    //logs this info
+    console.log(`The value ${localStorage.moneya}$ was saved into local memory`)
+
+    //swagtons save
+    localStorage.setItem('swagtons', parseInt(swaggleTons));
+    console.log(`The value ${localStorage.swaggleTons} swagton's was saved into local memory`)
+
+    //strong save
+    localStorage.setItem('strongmen', parseInt(strong));
+    console.log(`The value ${localStorage.strongMen} strongmen was saved into local memory`)
+    console.log("Cleared")
+}
