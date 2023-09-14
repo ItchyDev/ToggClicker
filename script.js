@@ -186,6 +186,7 @@ for (let i = 0; i<toggle.length ; i++){
   },false);
 }
 
+//clear progress
 function clearProgress(){
     money = 0 
     swaggleTons = 0
