@@ -16,6 +16,18 @@ const strongCost = document.querySelector(".strongCost")
 const numberOfStrongCounter = document.querySelector(".strongText")
 
 
+/* Open when someone clicks on the span element */
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+  
+  /* Close when someone clicks on the "x" symbol inside the overlay */
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+  
+  openNav()
+ 
 
 
 //save and load functions 
@@ -37,11 +49,13 @@ console.log("LOADED "+ swaggleTons+" swaggletons")
 if(localStorage.getItem('strongmen') === null || localStorage.getItem('strongmen') === undefined){
     strong = 0 
 }else{
-    //loads the swaggletons from the last session 
+    //loads the strongmen from the last session 
 strong = localStorage.getItem('strongmen');
     //logs the info     
 console.log("LOADED "+ strong+" strongmen")
 }
+
+//multiplyers
 
 
 updateDisplay();
@@ -60,8 +74,13 @@ function save(){
     //strong save
     localStorage.setItem('strongmen', parseInt(strong));
     console.log(`The value ${localStorage.strongMen} strongmen was saved into local memory`)
-    
-   
+
+
+    localStorage.setItem("swagPriceMulti", swagPriceMulti)
+    console.log(`The value ${localStorage.swagPriceMulti} swag multi`)
+
+    localStorage.setItem("strongPriceMulti", strongPriceMulti)
+    console.log(`The value ${localStorage.strongPriceMulti} strong multi`)
 }
 
 
@@ -206,3 +225,18 @@ function clearProgress(){
     console.log(`The value ${localStorage.strongMen} strongmen was saved into local memory`)
     console.log("Cleared")
 }
+const head = document.querySelector(".head")
+
+function resetImg() {
+    // Set image size to original
+    head.style.transform = "scale(1)";
+    head.style.transition = "transform 0.25s ease";
+}
+function enlargeImg() {
+    // Set image size to 1.5 times original
+    head.style.transform = "scale(1.2)";
+    // Animation effect
+    head.style.transition = "transform 0.25s ease";
+    setTimeout(resetImg, 100)
+}
+ 
